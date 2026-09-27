@@ -1,7 +1,6 @@
 import React from 'react';
 import { ZoomIn, CheckCircle } from 'lucide-react';
 import { ProofScreenshot } from '../types/portfolio';
-import { ExactScreenshotView } from './ExactScreenshotView';
 
 interface ProofScreenshotCardProps {
   screenshot: ProofScreenshot;
@@ -36,10 +35,11 @@ export const ProofScreenshotCard: React.FC<ProofScreenshotCardProps> = ({ screen
           <span className="text-xs font-bold tracking-wide">Click to Enlarge Full Screenshot</span>
         </div>
 
-        {/* High-Fidelity Exact Mobile Screenshot Mockup */}
-        <div className="w-full max-w-[270px]">
-          <ExactScreenshotView screenId={screenshot.id} />
-        </div>
+        <img
+          src={screenshot.imagePath}
+          alt={screenshot.title}
+          className="w-full max-h-[420px] object-contain rounded-xl"
+        />
 
       </div>
 

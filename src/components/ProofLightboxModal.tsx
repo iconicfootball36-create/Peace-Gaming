@@ -11,7 +11,6 @@ import {
   Minimize2,
 } from 'lucide-react';
 import { ProofScreenshot } from '../types/portfolio';
-import { ExactScreenshotView } from './ExactScreenshotView';
 
 interface ProofLightboxModalProps {
   isOpen: boolean;
@@ -98,9 +97,12 @@ export const ProofLightboxModal: React.FC<ProofLightboxModalProps> = ({
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* Device Mockup with Exact Screenshot Content */}
-          <div className={`transition-all duration-300 w-full ${isZoomed ? 'max-w-[420px]' : 'max-w-[340px]'} shadow-2xl`}>
-            <ExactScreenshotView screenId={current.id} isZoomed={isZoomed} />
+          <div className={`transition-all duration-300 w-full ${isZoomed ? 'max-w-[720px]' : 'max-w-[560px]'} shadow-2xl`}>
+            <img
+              src={current.imagePath}
+              alt={current.title}
+              className="w-full max-h-[72vh] object-contain rounded-xl"
+            />
           </div>
 
           {/* Zoom toggle button */}

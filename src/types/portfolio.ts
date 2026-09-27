@@ -23,6 +23,7 @@ export interface ServiceCard {
 
 export interface ProofScreenshot {
   id: string;
+  imagePath: string;
   title: string;
   screenType: 'gigs' | 'ratings_breakdown' | 'creator_reviews' | 'music_reviews' | 'repeat_buyer';
   badge: string;
@@ -51,7 +52,6 @@ export interface PeaceGamingProfile {
     value: number;
   };
   email: string;
-  whatsapp: string;
   telegram?: string;
   robloxProfile?: string;
   fiverrRating: string;

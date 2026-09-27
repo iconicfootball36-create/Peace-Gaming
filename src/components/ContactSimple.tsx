@@ -1,5 +1,5 @@
 import React, { useState, useId } from 'react';
-import { Send, Mail, MessageSquare, CheckCircle2, ShieldCheck, ArrowRight, ExternalLink } from 'lucide-react';
+import { Send, Mail, CheckCircle2, ShieldCheck, ArrowRight, ExternalLink } from 'lucide-react';
 import { PeaceGamingProfile } from '../types/portfolio';
 
 interface ContactSimpleProps {
@@ -18,6 +18,7 @@ export const ContactSimple: React.FC<ContactSimpleProps> = ({ profile, preselect
   const [contactInfo, setContactInfo] = useState('');
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}&su=${encodeURIComponent('Project Inquiry with Peace Gaming')}`;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,9 +40,11 @@ export const ContactSimple: React.FC<ContactSimpleProps> = ({ profile, preselect
         </div>
 
         {/* Quick Connect Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <div className="mb-8">
           <a
-            href={`mailto:${profile.email}?subject=Project Inquiry with Peace Gaming`}
+            href={emailComposeUrl}
+            target="_blank"
+            rel="noreferrer"
             className="flex items-center justify-between p-4 rounded-xl bg-[#12141e] hover:bg-[#181a28] border border-white/10 transition-all text-white group"
           >
             <div className="flex items-center gap-3">
@@ -58,25 +61,6 @@ export const ContactSimple: React.FC<ContactSimpleProps> = ({ profile, preselect
             <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
           </a>
 
-          <a
-            href={`https://wa.me/${profile.whatsapp.replace(/[^0-9]/g, '')}`}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-between p-4 rounded-xl bg-[#12141e] hover:bg-[#181a28] border border-white/10 transition-all text-white group"
-          >
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-xs text-slate-400 block">Direct WhatsApp</span>
-                <span className="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
-                  Chat Instantly
-                </span>
-              </div>
-            </div>
-            <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
-          </a>
         </div>
 
         {/* Quick Project Form */}
@@ -138,7 +122,7 @@ export const ContactSimple: React.FC<ContactSimpleProps> = ({ profile, preselect
 
               <div>
                 <label htmlFor={contactInfoId} className="block text-xs font-semibold text-slate-300 mb-1">
-                  Your Email or WhatsApp / Discord *
+                  Your Email or Discord *
                 </label>
                 <input
                   id={contactInfoId}

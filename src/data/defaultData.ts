@@ -13,7 +13,6 @@ export const peaceGamingProfile: PeaceGamingProfile = {
     value: 4.8,
   },
   email: 'adedayoademola171@gmail.com',
-  whatsapp: '+234800000000', // editable or easily clicked
   telegram: '@PeaceGaming',
   fiverrRating: '4.8 (21 Reviews)',
 };
@@ -124,9 +123,9 @@ export const clientReviews: ClientReview[] = [
 export const servicesData: ServiceCard[] = [
   {
     id: 'srv-yt-organic',
-    title: 'Organic YouTube Video Promotion',
+    title: 'Basic Package',
     category: 'youtube',
-    priceStarting: '$14.05',
+    priceStarting: '$20',
     badge: 'Popular',
     description: 'Targeted organic push to reach genuine active viewers, increase watch time, and trigger natural YouTube algorithm recommendations.',
     highlights: [
@@ -139,9 +138,9 @@ export const servicesData: ServiceCard[] = [
   },
   {
     id: 'srv-yt-usa',
-    title: 'Targeted USA YouTube Channel Promotion',
+    title: 'Standard Package',
     category: 'youtube',
-    priceStarting: '$14.05',
+    priceStarting: '$70',
     badge: 'High RPM',
     description: 'Laser-focused United States audience targeting to build high-value subscribers and maximize channel monetization/RPM.',
     highlights: [
@@ -154,9 +153,9 @@ export const servicesData: ServiceCard[] = [
   },
   {
     id: 'srv-roblox',
-    title: 'Custom Roblox Game Development',
+    title: 'Premium Package',
     category: 'roblox',
-    priceStarting: 'Custom Quote',
+    priceStarting: '$150',
     badge: 'Game Dev',
     description: 'Complete Roblox game design, clean scripting, and immersive map building engineered for high player retention and replay value.',
     highlights: [
@@ -172,6 +171,7 @@ export const servicesData: ServiceCard[] = [
 export const proofScreenshotsData = [
   {
     id: 'shot-gigs',
+    imagePath: '/proof/proof1.jpeg',
     title: 'Active Freelance Gigs & Pricing',
     screenType: 'gigs' as const,
     badge: 'Fiverr Gigs',
@@ -185,6 +185,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-rating-breakdown',
+    imagePath: '/proof/proof2.jpeg',
     title: '4.8 Overall Rating & Quality Breakdown',
     screenType: 'ratings_breakdown' as const,
     badge: '4.8 Overall',
@@ -205,6 +206,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-dumpling-gaming',
+    imagePath: '/proof/proof3.jpeg',
     title: 'Dumpling C Gaming Channel Delivery',
     screenType: 'creator_reviews' as const,
     badge: 'Gaming Proof',
@@ -225,6 +227,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-joey-music',
+    imagePath: '/proof/proof4.jpeg',
     title: 'Joey Kershinar Music & Topic Promotion',
     screenType: 'music_reviews' as const,
     badge: 'Music Artist',
@@ -245,6 +248,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-gneus-sound',
+    imagePath: '/proof/proof5.jpeg',
     title: 'GNeUs & Sound Soul Music Campaigns',
     screenType: 'creator_reviews' as const,
     badge: 'Exceeded Expectation',
@@ -265,6 +269,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-community-reach',
+    imagePath: '/proof/proof6.jpeg',
     title: 'Community Music Reach & Group Promotion',
     screenType: 'music_reviews' as const,
     badge: 'Audience Reach',
@@ -285,6 +290,7 @@ export const proofScreenshotsData = [
   },
   {
     id: 'shot-repeat-trust',
+    imagePath: '/proof/proof7.jpeg',
     title: 'Long-Term Repeat Orders & Client Retention',
     screenType: 'repeat_buyer' as const,
     badge: 'Client Loyalty',

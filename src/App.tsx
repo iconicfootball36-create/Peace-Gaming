@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { peaceGamingProfile, clientReviews, servicesData } from './data/defaultData';
+import { peaceGamingProfile, servicesData } from './data/defaultData';
 import { ServiceCard } from './types/portfolio';
 import { Header } from './components/Header';
 import { HeroSimple } from './components/HeroSimple';
 import { ServicesClean } from './components/ServicesClean';
-import { ProofOfWork } from './components/ProofOfWork';
+import { ProofPage } from './components/ProofPage';
 import { ContactSimple } from './components/ContactSimple';
 import { FooterSimple } from './components/FooterSimple';
 
 export default function App() {
   const profile = peaceGamingProfile;
-  const [selectedService, setSelectedService] = useState<string>('Organic YouTube Video Promotion ($14.05)');
+  const isProofPage = window.location.pathname === '/proof';
+  const [selectedService, setSelectedService] = useState<string>('Basic Package ($20)');
+
+  if (isProofPage) {
+    return <ProofPage profile={profile} />;
+  }
 
   const scrollToContact = () => {
     const el = document.getElementById('contact');
@@ -26,7 +31,7 @@ export default function App() {
 
   const handleSelectType = (type: 'youtube' | 'roblox') => {
     if (type === 'youtube') {
-      setSelectedService('Organic YouTube Video Promotion ($14.05)');
+      setSelectedService('Basic Package ($20)');
     } else {
       setSelectedService('Custom Roblox Game Development');
     }
@@ -52,12 +57,6 @@ export default function App() {
         <ServicesClean
           services={servicesData}
           onSelectService={handleSelectService}
-        />
-
-        <ProofOfWork
-          profile={profile}
-          reviews={clientReviews}
-          onOrderClick={scrollToContact}
         />
 
         <ContactSimple
