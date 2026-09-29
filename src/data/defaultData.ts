@@ -12,7 +12,7 @@ export const peaceGamingProfile: PeaceGamingProfile = {
     communication: 4.8,
     value: 4.8,
   },
-  email: 'peacegaming@gmail.com',
+  email: 'peaceexpert54@gmail.com',
   telegram: '@PeaceGaming',
   fiverrRating: '4.8 (21 Reviews)',
 };
